@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from email_authentication.email_authentication_router import email_authentication_router
-from loan.loan_router import loan_router
+from app.email_authentication_router import email_authentication_router
+from app.loan_router import loan_router
 
 app = FastAPI()
 
