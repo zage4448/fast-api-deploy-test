@@ -1,6 +1,8 @@
 FROM arm64v8/python:3.8
 
 COPY ./app /app
+COPY ./email_authentication /app
+COPY ./loan /app
 COPY requirements.txt /app
 WORKDIR /app
 
