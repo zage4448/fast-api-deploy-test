@@ -50,7 +50,9 @@ jobs:
           
       - name: Create account for email authentication
         run: |
+          pwd
           echo "${{ secrets.EMAIL_ACCOUNT }}" > naver/account
+          cat naver/account
 
 
   deploy:
