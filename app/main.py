@@ -6,7 +6,7 @@ from loan.loan_router import loan_router
 
 app = FastAPI()
 
-origins = ["http://localhost:8080"]
+origins = ["http://3.37.125.157"]
 
 app.add_middleware(
     CORSMiddleware,
