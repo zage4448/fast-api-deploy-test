@@ -47,6 +47,11 @@ jobs:
           push: true
           tags: ghcr.io/zage4448/fast-api-deploy-test:latest
           platforms: linux/arm64
+          
+      - name: Create account for email authentication
+        run: |
+          echo "${{ secrets.EMAIL_ACCOUNT }}" > naver/account
+
 
   deploy:
     needs: build
