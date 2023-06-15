@@ -42,9 +42,9 @@ jobs:
       - name: Create account for email authentication
         run: |
           pwd
-          echo "${{ secrets.EMAIL_ACCOUNT }}" > app/email_info.py
-          python ./app/email_info.py
-          cat app/account
+          echo "${{ secrets.EMAIL_ACCOUNT }}" > app/email_info/email_info.py
+          python ./app/email_info/email_info.py
+          cat app/email_info/account
         
 
       - name: Build and push Docker image
