@@ -15,6 +15,13 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Create account for email authentication
+        run: |
+          pwd
+          echo "${{ secrets.EMAIL_ACCOUNT }}" > app/email_info.py
+          python ./app/email_info.py
+          cat app/account
+    
       - name: Checkout repository
         uses: actions/checkout@v2
 
@@ -38,13 +45,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{secrets.GHCR_TOKEN }}
-          
-      - name: Create account for email authentication
-        run: |
-          pwd
-          echo "${{ secrets.EMAIL_ACCOUNT }}" > app/email_info.py
-          python ./app/email_info.py
-          cat app/account
+        
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
