@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-from expected_loan_check import calculate_score, calculate_loan
+from loan.expected_loan_check import calculate_score, calculate_loan
 
 loan_router = APIRouter()
 
