@@ -6,7 +6,7 @@ from email_authentication.email_authentication_router import email_authenticatio
 
 app = FastAPI()
 
-origins = ["http://3.37.125.157"]
+origins = ["http://3.37.125.157","http://localhost:8080"]
 
 app.add_middleware(
     CORSMiddleware,
