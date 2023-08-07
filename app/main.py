@@ -1,12 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import os
+from dotenv import load_dotenv
 
 from loan.loan_router import loan_router
 from email_authentication.email_authentication_router import email_authentication_router
 
 app = FastAPI()
+load_dotenv()
 
-origins = ["http://3.37.125.157","http://localhost:8080"]
+origins = os.getenv('origins')
 
 app.add_middleware(
     CORSMiddleware,
